@@ -1,0 +1,712 @@
+
+/* =========================================
+   MEMPHIS OLETILE — DIGITAL PORTFOLIO
+   Visual Identity: Modern Data / Technology
+========================================= */
+
+
+/* 1. ROOT VARIABLES */
+
+:root {
+    --background: #111820;
+    --surface: #18232d;
+    --surface-light: #202e3a;
+    --cyan: #8be9fd;
+    --cyan-dark: #52c9e0;
+    --white: #f4f7fa;
+    --text: #c1ccd5;
+    --muted: #8494a1;
+    --border: rgba(255, 255, 255, 0.10);
+
+    --heading-font: 'Manrope', sans-serif;
+    --mono-font: 'DM Mono', monospace;
+}
+
+
+/* 2. RESET AND GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--white);
+    font-family: var(--heading-font);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+::selection {
+    background: var(--cyan);
+    color: var(--background);
+}
+
+
+/* 3. NAVIGATION */
+
+.navbar {
+    width: 100%;
+    min-height: 85px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(17, 24, 32, 0.96);
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo-mark {
+    font-family: var(--mono-font);
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--cyan);
+}
+
+.logo-name {
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    font-size: 11px;
+    color: var(--muted);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--cyan);
+}
+
+
+/* 4. HERO SECTION */
+
+.hero {
+    min-height: 680px;
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    left: -180px;
+    width: 450px;
+    height: 450px;
+    background: rgba(82, 201, 224, 0.05);
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-family: var(--mono-font);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--cyan);
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 105px);
+    line-height: 0.98;
+    letter-spacing: -6px;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    color: var(--cyan);
+}
+
+.hero h2 {
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero h2 span {
+    color: var(--cyan);
+}
+
+.hero-description {
+    max-width: 520px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+
+/* 5. BUTTONS */
+
+.btn-primary,
+.btn-secondary {
+    min-height: 48px;
+    padding: 13px 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    font-size: 11px;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--cyan);
+    color: var(--background);
+}
+
+.btn-primary:hover {
+    background: var(--white);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--border);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cyan);
+    font-size: 12px;
+    font-weight: 800;
+    margin-top: 20px;
+    transition: 0.3s ease;
+}
+
+.text-link:hover {
+    gap: 20px;
+}
+
+
+/* 6. HERO IMAGE AREA */
+
+.hero-visual {
+    min-height: 430px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-frame {
+    width: 100%;
+    max-width: 350px;
+    height: 420px;
+    padding: 12px;
+    border: 1px solid rgba(139, 233, 253, 0.35);
+    position: relative;
+    z-index: 2;
+}
+
+.image-frame::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 90px;
+    height: 90px;
+    border-top: 2px solid var(--cyan);
+    border-right: 2px solid var(--cyan);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(145deg, rgba(139, 233, 253, 0.08), transparent),
+        var(--surface);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--cyan);
+    font-family: var(--mono-font);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.image-placeholder small {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 15px;
+    left: -45px;
+    z-index: 3;
+    width: 260px;
+    padding: 20px;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-label,
+.card-indicator {
+    font-family: var(--mono-font);
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.floating-card strong {
+    font-size: 17px;
+    color: var(--cyan);
+}
+
+.visual-decoration {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(139, 233, 253, 0.12);
+    transform: rotate(45deg);
+}
+
+
+/* 7. SECTION HEADINGS */
+
+.section-heading {
+    margin-bottom: 45px;
+}
+
+.section-number {
+    display: block;
+    color: var(--cyan);
+    font-family: var(--mono-font);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.section-heading h2,
+.personal-section h2 {
+    font-size: clamp(30px, 4vw, 48px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.section-heading h2 span,
+.personal-section h2 span {
+    color: var(--cyan);
+}
+
+
+/* 8. INTRODUCTION */
+
+.intro-section {
+    padding: 110px 12%;
+    background: var(--surface);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.intro-content p {
+    color: var(--text);
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+/* 9. FOCUS AREAS */
+
+.focus-section {
+    padding: 110px 10%;
+}
+
+.focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.focus-card {
+    min-height: 280px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.focus-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(139, 233, 253, 0.5);
+}
+
+.focus-index {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: var(--muted);
+    font-family: var(--mono-font);
+    font-size: 10px;
+}
+
+.focus-icon {
+    color: var(--cyan);
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.focus-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.focus-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* 10. CAREER VISION */
+
+.vision-section {
+    padding: 100px 12%;
+    background: var(--surface);
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
+    gap: 80px;
+}
+
+.vision-label {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.vision-line {
+    width: 60px;
+    height: 2px;
+    background: var(--cyan);
+}
+
+.vision-overline {
+    color: var(--cyan);
+    font-family: var(--mono-font);
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.vision-content h2 {
+    font-size: clamp(35px, 5vw, 58px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.vision-content h2 span {
+    color: var(--cyan);
+}
+
+.vision-content > p:not(.vision-overline) {
+    max-width: 650px;
+    color: var(--text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+
+/* 11. PERSONAL INTEREST */
+
+.personal-section {
+    padding: 100px 12%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.personal-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.basketball-mark {
+    color: var(--cyan);
+    font-size: 45px;
+    line-height: 1;
+}
+
+.personal-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.personal-content p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+
+/* 12. CLOSING SECTION */
+
+.closing-section {
+    padding: 110px 12%;
+    background:
+        radial-gradient(circle at 80% 50%, rgba(82, 201, 224, 0.10), transparent 35%),
+        var(--surface);
+}
+
+.closing-section h2 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.25;
+    letter-spacing: -2px;
+    margin-bottom: 35px;
+}
+
+.closing-section h2 span {
+    color: var(--cyan);
+}
+
+
+/* 13. FOOTER */
+
+.footer {
+    padding: 35px 10%;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-brand p {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.footer > p {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.footer-copy {
+    font-family: var(--mono-font);
+}
+
+
+/* 14. RESPONSIVE DESIGN */
+
+@media (max-width: 1050px) {
+
+    .navbar {
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 80px 7%;
+        gap: 40px;
+    }
+
+    .intro-section,
+    .vision-section,
+    .personal-section {
+        padding: 80px 7%;
+    }
+
+    .focus-section {
+        padding: 80px 7%;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .navbar {
+        padding: 18px 6%;
+    }
+
+    .nav-links {
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 75px 7%;
+        gap: 50px;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .hero-visual {
+        min-height: 420px;
+    }
+
+    .image-frame {
+        max-width: 320px;
+    }
+
+    .floating-card {
+        left: 0;
+    }
+
+    .intro-section,
+    .vision-section,
+    .personal-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .focus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .focus-card {
+        min-height: 240px;
+    }
+
+    .vision-label {
+        gap: 10px;
+    }
+
+    .personal-content {
+        padding: 22px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .floating-card {
+        width: 230px;
+    }
+
+    .closing-section h2 {
+        font-size: 34px;
+    }
+
+}
