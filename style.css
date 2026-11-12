@@ -1850,3 +1850,25 @@ button {
     }
 
 }
+
+
+/* Profile image sizing */
+.profile-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+}
+
+/* Keep profile image frames within their intended dimensions */
+.image-frame,
+.about-image {
+    overflow: hidden;
+}
+
+.image-frame .profile-image {
+    width: 100%;
+    height: 100%;
+}
